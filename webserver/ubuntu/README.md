@@ -11,7 +11,12 @@
   - SSL
 * PHP 7
 
-### RUN Container
+### Docker Build
+```sh
+# docker build -t forexliga/webserver:latest -t forexliga/webserver:0.1 .
+```
+
+### Docker Run
 ```sh
 $ docker run -it -p 80:80 -p 443:443 -v /etc/apache2 -v /var/www/html --name webserver forexliga/webserver
 ```
