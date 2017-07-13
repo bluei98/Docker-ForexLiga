@@ -16,7 +16,9 @@ $ docker network connect service webserver
 
 ## Set DB Server(MariaDB)
 ### Pull Docker Image And Run Container
+```sh
 $ docker run -it -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD --name dbserver mariadb
+```
 ### Join Docker Network
 ```sh
 $ docker network connect service dbserver
