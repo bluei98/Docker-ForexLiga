@@ -13,7 +13,8 @@
 
 ### Docker Build
 ```sh
-# docker build -t webserver .
+$ docker build -t webserver .
+// docker build -t forexliga/webserver:latest -t forexliga/webserver:0.1 .
 ```
 
 ### Docker Run
