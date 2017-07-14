@@ -47,6 +47,13 @@ RUN a2enmod rewrite
 RUN update-rc.d apache2 enable
 RUN update-rc.d cron enable
 
+# Default Setting File Add
+RUN wget https://raw.githubusercontent.com/bluei98/Docker-ForexLiga/master/webserver/ubuntu/default-ssl.conf /etc/apache2/sites-enabled/000-default-ssl.conf
+
+# Service 시작
+RUN service apache2 start
+RUN service cron start
+
 VOLUME ["/var/www/html"]
 
 EXPOSE 80
