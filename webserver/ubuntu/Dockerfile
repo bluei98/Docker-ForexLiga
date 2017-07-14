@@ -14,7 +14,7 @@ RUN apt-get install -y tzdata
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 # 기본 패키지 설치
-RUN apt-get install -y gcc make telnet jwhois vim git gettext cron sysv-rc-conf mysql-client iputils-ping net-tools
+RUN apt-get install -y gcc make telnet jwhois vim git gettext cron sysv-rc-conf mysql-client iputils-ping net-tools wget
 
 # Apache PHP 설치
 RUN apt-get install -y apache2 apache2-utils
