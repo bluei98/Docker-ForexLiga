@@ -36,12 +36,16 @@ RUN sed 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/server.
 RUN sed 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/server.key/g' /etc/apache2/sites-available/default-ssl.conf.tmp > /etc/apache2/sites-enabled/000-default-ssl.conf
 RUN rm /etc/apache2/sites-available/default-ssl.conf.tmp -f
 
-# Cache 설정
+# Apache Cache 설정
 RUN a2enmod cache
 RUN a2enmod cache_disk
 RUN a2enmod expires
 RUN a2enmod headers
 RUN a2enmod rewrite
+
+# Service 등록
+RUN update-rc.d apache2 enable
+RUN update-rc.d cron enable
 
 VOLUME ["/var/www/html"]
 
